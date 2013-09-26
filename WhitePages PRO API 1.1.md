@@ -5,7 +5,7 @@
 
 Copyright 2013, WhitePages, Inc.
 
-Last updated: April 14, 2013
+Last updated: September 26, 2013
 
 ## Introduction and Overview
 
