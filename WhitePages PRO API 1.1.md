@@ -289,6 +289,44 @@ offending name will be identified as **paramname** in the message.
 **Missing Input:lastname** - indicates that a required input parameter
 was not supplied. In this example the missing parameter was lastname.
 
+#### Error Payloads
+Error payloads are provided in JSON or XML as requested in the API call.
+
+##### JSON Error Payload Example
+
+	result: {
+		type: "error",
+		code: "Missing Input",
+		message: "One or more input parameters are invalid",
+		billable: "false"
+	}
+	
+##### XML Error Payload Example
+
+	<wp:result wp:type="error" wp:code="Missing Input" wp:message="One or more input parameters are invalid" wp:billable="false"/>
+	<wp:errormessages>
+		<wp:message>Missing Input: areacode</wp:message>
+	</wp:errormessages>
+
+##### Error response codes
+
+The following error response codes are delivered within the above error payloads:
+
+
+| HTTP Response | Type | Code | Message | Description |
+| ------------- | ---- | ---- | ------- | -------- |
+| 200 | 	 |  |  | The API responded successfully |
+| 400 | error | Error | The method is invalid | The method you attempted to invoke does not exist |
+| 400 | error | Error | API Key required | An API key is required to be passed to invoke this API method |
+| 403 | error | Error | Quota exceed | You have exceeded your API call quota, please contact your account manager |
+| 400 | error | Error | Invalid API Version | The API version requested is invalid | 
+| 400 | error | Error | Invalid Output Type | The selected output format is not valid | 
+| 403 | error | Error | Inactive or Invalid API Key | The API key is inactive or invalid | 
+| 403 | error | Error | Invalid API URI | A method and version are required to use this API | 
+| 403 | error | Error | Invalid Input Parameters | The parameters passed to the method were not recognized | 
+| 500 | error | Error | Data Provider Error | Error from the data provider. Please try again in a few seconds | 
+| 500 | error | Error | Generic WPAPI Error | A generic error has occurred. Please try again in a few seconds |
+
 ## Optional Feature - Receiving Mail
 
 The WhitePages PRO API now offers the ability to inform you on whether
