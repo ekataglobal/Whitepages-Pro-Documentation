@@ -692,6 +692,8 @@ WhitePages PRO API.
 
         -   Address
 
+            -   Type: residential, business, unknown
+            
             -   Deliverable
 
             -   Receiving\_mail: opt-in, Boolean value
@@ -699,7 +701,7 @@ WhitePages PRO API.
             -   Not\_receiving\_mail\_reason: opt-in, e.g. "vacant",
                 "new\_construction", "other"
 
-            -   Type: opt-in, "single-unit", "multi-unit", "po\_box",
+            -   Delivery_point: opt-in, "single-unit", "multi-unit", "po\_box",
                 "commercial\_mail\_drop"
 
             -   Fullstreet
