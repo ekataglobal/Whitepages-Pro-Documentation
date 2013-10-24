@@ -692,7 +692,7 @@ WhitePages PRO API.
 
         -   Address
 
-            -   Type: residential, business, unknown
+            -   Type: "residential", "business", "work", "unknown"
             
             -   Deliverable
 
