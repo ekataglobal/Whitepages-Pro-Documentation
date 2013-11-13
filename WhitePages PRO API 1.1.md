@@ -114,6 +114,13 @@ would look like:
 
 Note that KEYVAL is your API key value provided by WhitePages.
 
+## Optional JSON Output
+
+The default output format is XML. You can optionally receive data in JSON 
+by including the parameter **outputtype=JSON** in the request. For example:
+
+	http://proapi.whitepages.com/find_person/1.1/?firstname=mike;lastname=smith;zip=98101;api_key=KEYVAL;outputtype=JSON
+
 ## PRO API Responses
 
 ### Results Response
