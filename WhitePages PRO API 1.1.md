@@ -114,7 +114,7 @@ would look like:
 
 Note that KEYVAL is your API key value provided by WhitePages.
 
-## Optional JSON Output
+### Optional JSON Output
 
 The default output format is XML. You can optionally receive data in JSON 
 by including the parameter **outputtype=JSON** in the request. For example:
