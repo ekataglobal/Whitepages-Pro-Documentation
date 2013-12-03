@@ -490,18 +490,12 @@ received when you registered.
 ### Parameters
 
 Parameters can appear in any order. Parameter names are case-sensitive;
-parameter values case-insensitive. For example "state=wa" is equivalent
-to "state=WA", but "State=WA" is not a valid parameter assignment.
+parameter values case-insensitive. 
 
 | Parameter | Required? | Notes | Example |
 | --------- | :-------: | ----- | ------- |
-| phone | yes | Can be 7 or 10 digits | phone=2069730000 |
-| state | yes, if phone is 7 digits | USPS two character abbreviations only | state=WA |
+| phone | yes | Must include 10 digits, can optionally include formatting characters | phone=2069730000 |
 
-### Remarks
-
-The phone parameter is required and the state parameter is also required
-if the phone parameter value is 7 digits.
 
 ### Limitations
 
@@ -517,14 +511,11 @@ not billable.
 
 ### Example
 
-The following examples specify a reverse phone search for the
+The following example specifies a reverse phone search for the
 Seattle-area telephone number (206) 973-0000:
 
 	http://proapi.whitepages.com/reverse_phone/1.1/?phone=2069730000;api_key=KEYVAL
 
-or
-
-	http://proapi.whitepages.com/reverse\phone/1.1/?phone=9730000;state=WA;api_key=KEYVAL
 
 ## Reverse Address Search
 
