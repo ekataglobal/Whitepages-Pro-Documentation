@@ -495,7 +495,7 @@ parameter values case-insensitive.
 
 ### Spam Score
 
-In the reputation parameter returned for reverse phone lookup, WhitePages PRO API 1.1 returns a spam score based on the likelihood a phone number is being used the number is performing high volume outbound calls.  Generally, a score above 10% indicates spam, and this number with decay over time. 
+In the reputation parameter returned for reverse phone lookup, WhitePages PRO API 1.1 returns a spam score based on the likelihood a phone number is performing high volume outbound calls.  Generally, a score above 10% indicates spam and this number with decay over time. 
 
 
 ### Limitations
