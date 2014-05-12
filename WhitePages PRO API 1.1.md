@@ -3,13 +3,10 @@
 *Documentation and Implementation Guide for WhitePages PRO API Version
 1.1*
 
-Copyright 2013, WhitePages, Inc.
-
-Last updated: September 26, 2013
 
 ## Introduction and Overview
 
-WhitePages, Inc PRO API gives businesses the ability to easily integrate
+WhitePages PRO API gives businesses the ability to easily integrate
 and leverage its industry leading People and Business search. The API is
 accessed via a RESTful interface using simple HTTP GET requests. The
 WhitePages.com API will provide XML responses by default. Optionally,
@@ -496,6 +493,10 @@ parameter values case-insensitive.
 | --------- | :-------: | ----- | ------- |
 | phone | yes | Must include 10 digits, can optionally include formatting characters | phone=2069730000 |
 
+### Spam Score
+
+In the reputation parameter returned for reverse phone lookup, WhitePages PRO API 1.1 returns a spam score based on the likelihood a phone number is being used the number is performing high volume outbound calls.  Generally, a score above 10% indicates spam, and this number with decay over time. 
+
 
 ### Limitations
 
@@ -687,6 +688,12 @@ WhitePages PRO API.
                 -   Linenumber
 
                 -   Carrier: returned only by reverse phone searches
+				
+				-   Reputation (including spamscore)
+				
+				-   zip_code
+				
+				-   account_type
 
         -   Address
 
@@ -767,5 +774,3 @@ WhitePages PRO API.
   
 
 WhitePages PRO API Implementation Guide
-
-Copyright 2013, WhitePages, Inc.
