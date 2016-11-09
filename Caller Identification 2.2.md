@@ -32,27 +32,20 @@ A Caller Identification response is formatted as follows:
 | line_type | string | Line type can be any of the following: Landline: Traditional wired phone line, FixedVOIP: VOIP based fixed line phones, Mobile: Wireless phone line, Voicemail: Voicemail-only service, TollFree: Callee pays for call, Premium: Caller pays a premium for the call–e.g. 976 area code, NonFixedVOIP: Skype, for example, Other: Anything that does not match the previous categories |
 | carrier | string | The company that provides voice and/or data services for this phone number. Example: “AT&T Wireless” |
 | do_not_call | boolean | If true, phone number is on the National Do Not Call Registry. Access to this data is restricted to customers who have signed an agreement agreeing to usage terms and conditions. If false or null, phone number is not on the National Do Not Call Registry |
-| reputation | object | Reputation of this phone number in a data structure. Higher the level/score for a number, worse its reputation and likelihood of it being a spam/risky number (e.g. Telemarketer, Robocalls, Toll free pumping, Phishing, etc.). |
 | is_prepaid | boolean | If true, phone number is associated to a prepaid phone account. If false, phone number is not associated with a prepaid phone account. If null, the prepaid status of the phone is not known. |
 | belongs_to | array | A single person or business entity associated with this phone number. |
 | associated_locations | array | A single location associated with this phone number. More details on the Location Id data structure can be found below. |
 
-**Reputation object**
+
+**Associated locations array**
 
 | Field     | Type | Description |
 | ------- | ---- | ---- |
-| level | integer | A 1-4 score on the likelihood of this number being spammy. 1 indicates high confidence that this number has not been associated with spam/risky behavior, 4 indicates very high confidence that this is a spammy/risky number. |
-| details | object | An array of every spam/risky behavior this number has been associated with.|
-| volume_score | integer | A 1-4 score on how active the phone number has been making/receiving calls and sms. |
-| report_count | integer | Number of reports we have received on this phone number being spam/risky. |
-
-**Reputation Details object**
-
-| Field     | Type | Description |
-| ------- | ---- | ---- |
-| score | integer | A 0-100 score on the likelihood of this number being associated with a particular type of spam or scam.  |
-| type | string | Type of behavior associated with this phone. Values are ‘NotSpam’, ‘Spam’, ‘Risk’ or ‘NotApplicable’, based on the behavior associated with the phone. |
-| category | string | Category of spam/risk associated with the phone. Categories identified include: NotSpam, DebtCollector, Telemarketer, PoliticalCall, PhoneSurvey, Phishing, Extortion, IRS Scam, Tax Scam, Tech Support Scam, Vacation Scam, Lucky Winner Scam, Scam, NonProfit, Robocaller, TollFree Pumping, OtherSpam|
+| id | Object | key, type, uuid, durability |
+| type | String | Type of the address |
+| valid_for | Object | Start and End day, month, year when person was associated with address |
+| Full address |  | To fully describe the location we return following strings and boolean values: legal_entities_at, city, postal_code, zip4, state_code, country_code, is_receiving_mail, not_receiving_mail_reason, usage, delivery_point, address_type, is_deliverable, standard_address_line1, standard_address_line2, is_historical  |
+| lat_long | Object | latitude, longitude, and accuracy. Where accuracy could be: RoofTop, Street, PostalCode, City, State, Country |
 
 
 ## Example
@@ -131,4 +124,5 @@ https://proapi.whitepages.com/2.2/phone.json?phone_number=2069735100&api_key=KEY
   "messages": []
 }
 ```
+
 
