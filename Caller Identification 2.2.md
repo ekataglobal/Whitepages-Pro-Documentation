@@ -55,7 +55,7 @@ https://proapi.whitepages.com/2.2/phone.json?phone_number=2069735100&api_key=KEY
 ```
 
 **Response**
-```
+```json
 {
   "results": [
     {
