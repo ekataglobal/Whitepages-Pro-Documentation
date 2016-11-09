@@ -156,16 +156,21 @@ non-existent last name of "zzzzzz":
 *The results response (the elements are described below) should look
 like the following:*
 
-	<wp:wp>
-	<wp:meta>
-	<wp:recordrange wp:lastrecord="0" wp:firstrecord="0" wp:totalavailable="0"/\>
-	<wp:apiversion>1.1</wp:apiversion>
-	<wp:searchlinks>
-	<wp:link wp:linktext="Link to this api call" wp:type="self">URL_TO_THIS_API_CALL</wp:link>
-	</wp:searchlinks>
-	</wp:meta>
-	<wp:result wp:type="success" wp:message="The search did not find results" wp:code="No Data Found">
-	</wp:wp>
+```xml
+<wp:wp xmlns:wp="http://api.whitepages.com/schema/">
+  <wp:listings/>
+  <wp:meta>
+    <wp:recordrange wp:firstrecord="1" wp:lastrecord="0" wp:totalavailable="0"/>
+    <wp:apiversion>1.1</wp:apiversion>
+    <wp:searchlinks>
+      <wp:self wp:linktext="Link to this api call">
+        <wp:url>URL_TO_THIS_API_CALL</wp:url>
+      </wp:self>
+    </wp:searchlinks>
+  </wp:meta>
+  <wp:result wp:type="success" wp:code="No Data Found" wp:message="The search did not find results" wp:billable="false"/>
+</wp:wp>
+```
 
 Note that *URL\_TO\_THIS\_API\_CALL* is the same URL as the original
 query
@@ -245,23 +250,24 @@ the required street parameter:
 The results response (the elements are described below) should look like
 the following:
 
-	<wp:wp>
-	<wp:listings/>
-	<wp:meta>
-	<wp:recordrange wp:firstrecord="0" wp:lastrecord="0" wp:totalavailable="0"/>
-	<wp:apiversion>1.1\</wp:apiversion>
-	<wp:searchlinks>
-	<wp:self wp:linktext="Link to this api call">
-	<wp:url> URL_TO_THIS_API_CALL
-	</wp:url>
-	</wp:self>
-	</wp:searchlinks>
-	</wp:meta>
-	<wp:result wp:type="error" wp:code="Missing Input" wp:message="One or more input parameters are invalid" wp:billable="false"/>
-	<wp:errormessages>
-	<wp:message>Missing Input: street\</wp:message>
-	</wp:errormessages>
-	</wp:wp>
+```xml
+<wp:wp xmlns:wp="http://api.whitepages.com/schema/">
+  <wp:errormessages>
+    <wp:message>Missing Input: street</wp:message>
+  </wp:errormessages>
+  <wp:listings/>
+  <wp:meta>
+    <wp:recordrange wp:firstrecord="0" wp:lastrecord="0" wp:totalavailable="0"/>
+    <wp:apiversion>1.1</wp:apiversion>
+    <wp:searchlinks>
+      <wp:self wp:linktext="Link to this api call">
+        <wp:url>URL_TO_THIS_API_CALL</wp:url>
+      </wp:self>
+    </wp:searchlinks>
+  </wp:meta>
+  <wp:result wp:type="error" wp:code="Missing Input" wp:message="One or more input parameters are invalid" wp:billable="false"/>
+</wp:wp>
+```
 
 Note that in the above, URL\_TO\_THIS\_API\_CALL is the same URL as the original query
 
