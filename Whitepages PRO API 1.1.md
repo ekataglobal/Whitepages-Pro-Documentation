@@ -175,65 +175,6 @@ like the following:*
 Note that *URL\_TO\_THIS\_API\_CALL* is the same URL as the original
 query
 
-## Picklist Response
-
-
-If the search criteria are too ambiguous to produce a clear result, the
-default XML format response is described below. See the section on
-optional JSON output for an illustration of how this might differ if
-optional JSON output format was requested.
-
-For example, given the following search query for someone named "smith"
-in the city "portland":
-
-	http://proapi.whitepages.com/find_person/1.1/?lastname=smith;city=portland;api_key=API_KEY
-
-The results response (the elements are described below) seeks
-clarification since Portland is found in several states. The actual
-response should look like the following:
-
-	<wp:wp>
-	<wp:listings>
-	<wp:listing>
-	<wp:address>***
-	<wp:city>PORTLAND</wp:city>
-	<wp:state>OR</wp:state>
-	<wp:country>US</wp:country>
-	</wp:address>
-	<wp:listingmeta>
-	<wp:type>unknown</wp:type>
-	</wp:listingmeta>
-	</wp:listing>
-	…
-	<wp:listing>
-	<wp:address>
-	<wp:city>PORTLAND</wp:city>
-	<wp:state>ME</wp:state>
-	<wp:country>US</wp:country>
-	<wp:address>
-	<wp:listingmeta>
-	<wp:type>unknown</wp:type>
-	</wp:listingmeta>
-	</wp:listing>
-	</wp:listings>
-	<wp:meta>
-	<wp:recordrange wp:firstrecord="0" wp:lastrecord="0" wp:totalavailable="17"/>
-	<wp:apiversion>1.1</wp:apiversion>
-	<wp:searchlinks>
-	<wp:self wp:linktext="Link to this api call">
-	<wp:url> URL_TO_THIS_API_CALL
-	</wp:url>
-	</wp:self>
-	</wp:searchlinks>
-	</wp:meta>
-	<wp:result wp:type="error" wp:code="Refine Input" wp:message="Ambiguous geographic location" wp:billable="true">
-	<wp:errormessages>
-	<wp:message>Refine Input: multiple cities found</wp:message>
-	</wp:errormessages>
-	</wp:wp>
-
-Note that in the above, URL\_TO\_THIS\_API\_CALL is the same URL as the original query
-
 ## Error Response
 
 If the search request contains errors, the search returns a response
