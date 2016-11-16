@@ -170,11 +170,11 @@ A sample response:
     "is_proxy": null,
     "distance_from_address": "1117",
     "geolocation": {
-    "postal_code": "29205",
-    "city_name": "Columbia",
-    "country_name": "United States",
-    "continent_code": "NA",
-    "country_code": "US"
+      "postal_code": "29205",
+      "city_name": "Columbia",
+      "country_name": "United States",
+      "continent_code": "NA",
+      "country_code": "US"
     },
   }
 }
