@@ -1,7 +1,6 @@
-Whitepages-PRO-Documentation
+Whitepages Pro Documentation
 ============================
 
-Documentation for Whitepages PRO. Includes API and PRO Web automation documentation.
+Documentation for Whitepages Pro. Includes API and Web automation documentation.
 
-For more information on WhitePages PRO, please visit http://pro.whitepages.com or email pro-sales@whitepages.com.
-
+For more information on Whitepages Pro, please visit https://pro.whitepages.com/ or email pro-sales@whitepages.com.
