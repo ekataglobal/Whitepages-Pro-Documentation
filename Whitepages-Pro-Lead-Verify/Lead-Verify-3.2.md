@@ -48,13 +48,15 @@ The checks indicate whether the phone matches the input name provided on the lea
 A sample response:
 
 ```json
-"phone_checks": {
-"warnings": [ ],
-"is_valid":true,
-"phone_contact_score": 2,
-"is_connected": null,
-"phone_to_name": "Match",
-"subscriber_name": "Drama Number"
+{
+  "phone_checks": {
+    "warnings": [ ],
+    "is_valid":true,
+    "phone_contact_score": 2,
+    "is_connected": null,
+    "phone_to_name": "Match",
+    "subscriber_name": "Drama Number"
+  }
 }
 ```
 
@@ -77,16 +79,18 @@ The check indicates whether the email is valid or malformed, active or inactive,
 A sample response:
 
 ```json
-"email_address_checks": {
-"warnings": [ ],
-"is_valid": true,
-"diagnostics": [
-"Syntax OK, domain exists, and mailbox does not reject mail"
-],
-"email_contact_score": 3,
-"is_disposable": false,
-"email_to_name": "No match",
-"registered_name": "MOHAMED JALLOH"
+{
+  "email_address_checks": {
+    "warnings": [ ],
+    "is_valid": true,
+    "diagnostics": [
+      "Syntax OK, domain exists, and mailbox does not reject mail"
+    ],
+    "email_contact_score": 3,
+    "is_disposable": false,
+    "email_to_name": "No match",
+    "registered_name": "MOHAMED JALLOH"
+  }
 }
 ```
 
@@ -107,13 +111,15 @@ The check indicates whether the address is real and active and verifies if the r
 A sample response:
 
 ```json
-"address_checks": {
-"warnings": [ ],
-"is_valid": true,
-"address_contact_score": 1,
-"is_active": true,
-"address_to_name": "Match",
-"resident_name": "Drama Number"
+{
+  "address_checks": {
+    "warnings": [ ],
+    "is_valid": true,
+    "address_contact_score": 1,
+    "is_active": true,
+    "address_to_name": "Match",
+    "resident_name": "Drama Number"
+  }
 }
 ```
 
@@ -131,17 +137,19 @@ The check indicates whether the IP is proxy and it’s geolocation
 A sample response:
 
 ```json
-"ip_address_checks": {
-"warnings": [ ],
-"is_proxy": null
-"distance_from_address": "1117",
-"geolocation": {
-"postal_code": "29205",
-"city_name": "Columbia",
-"country_name": "United States",
-"continent_code": "NA",
-"country_code": "US"
-},
+{
+  "ip_address_checks": {
+    "warnings": [ ],
+    "is_proxy": null
+    "distance_from_address": "1117",
+    "geolocation": {
+      "postal_code": "29205",
+      "city_name": "Columbia",
+      "country_name": "United States",
+      "continent_code": "NA",
+      "country_code": "US"
+    }
+  }
 }
 ```
 
