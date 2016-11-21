@@ -140,7 +140,7 @@ A sample response:
 {
   "ip_address_checks": {
     "warnings": [ ],
-    "is_proxy": null
+    "is_proxy": null,
     "distance_from_address": "1117",
     "geolocation": {
       "postal_code": "29205",
